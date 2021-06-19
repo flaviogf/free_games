@@ -11,7 +11,7 @@ module FreeGames
     def execute
       message = Message.new(
         uid: SecureRandom.uuid,
-        updateDate: Time.now.utc.to_s,
+        updateDate: Time.now.utc.iso8601,
         titleText: "Genshin Impact",
         mainText: "Jogo Genshin Impact. Disponível entre os dias 12/06/2020 e 13/06/2020",
         redirectionUrl: ""
