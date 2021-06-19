@@ -4,7 +4,7 @@ describe "Functions" do
   include FunctionsFramework::Testing
 
   context "search" do
-    it 'should return ok' do
+    it "should return ok" do
       load_temporary "app.rb" do
         request = make_get_request "http://localhost:8080"
 
@@ -14,7 +14,7 @@ describe "Functions" do
       end
     end
 
-    it 'should return a list of message' do
+    it "should return a list of message" do
       load_temporary "app.rb" do
         request = make_get_request "http://localhost:8080"
 
