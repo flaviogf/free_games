@@ -5,7 +5,7 @@ module FreeGames
     end
 
     def build_response
-      Rack::Response.new JSON.dump(execute.map(&:to_h)), 200, { "Content-Type" => "application/json" } 
+      [200, { "Content-Type" => "application/json" }, [JSON.dump(execute.map(&:to_h))]]
     end
 
     def execute
