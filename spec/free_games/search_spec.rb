@@ -1,8 +1,23 @@
 require "spec_helper"
 
 describe FreeGames::Search do
+  subject(:game) do
+    FreeGames::Game.new id: SecureRandom.uuid,
+                        title: "Genshin Impact",
+                        started_at: Time.parse("2020-06-12"),
+                        ended_at: Time.parse("2020-06-13")
+  end
+
+  subject(:request) do
+    double("request")
+  end
+
+  subject(:service) do
+    double("service", :fetch => [game])
+  end
+
   subject(:search) do
-    FreeGames::Search.new nil
+    FreeGames::Search.new request, service: service
   end
 
   it "should have method execute" do
@@ -12,8 +27,14 @@ describe FreeGames::Search do
   it "should return a list of message" do
     messages = search.execute
 
-    expect(messages.size).to be 1
+    expect(messages.count).to be 2
 
-    expect(messages[0]).to be_a FreeGames::Message
+    message = messages.first
+
+    expect(message.respond_to?(:uid)).to be true
+    expect(message.respond_to?(:updateDate)).to be true
+    expect(message.respond_to?(:titleText)).to be true
+    expect(message.respond_to?(:mainText)).to be true
+    expect(message.respond_to?(:redirectionUrl)).to be true
   end
 end
