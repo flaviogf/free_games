@@ -10,9 +10,9 @@ describe FreeGames::HttpService do
   it "should return a list of games" do
     games = service.fetch
 
-    expect(games.size).to be 1
+    expect(games.count).to be 1
 
-    game = games[0]
+    game = games.first
 
     expect(game).to be_a FreeGames::Game
   end

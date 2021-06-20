@@ -1,12 +1,10 @@
 module FreeGames
   class HttpService
     def fetch
-      game = Game.new(
-        id: SecureRandom.uuid,
-        title: "Genshin Impact",
-        started_at: Time.now.utc.iso8601,
-        ended_at: Time.now.utc.iso8601,
-      )
+      game = Game.new id: SecureRandom.uuid,
+                      title: "Genshin Impact",
+                      started_at: Time.now.utc,
+                      ended_at: Time.now.utc
 
       [game]
     end
