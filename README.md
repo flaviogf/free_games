@@ -1,12 +1,14 @@
 ## :rocket: Project
 
+:cloud: Cloud function that returns free available games at Epic store. These messages are formatted to integrate into Amazon Alexa. This project was based on [Epic Games - Ruby Script](https://gist.github.com/dvinciguerra/9d26f7ff8fcd0bbacf9d325748dc783a) made by [@dvinciguerra](https://github.com/dvinciguerra)
+
 ### Requirements
 
-[ ] It should request free games at the epic store
+[x] It should request free games at the epic store
 
-[ ] It should map returned games into messages
+[x] It should map returned games into messages
 
-[ ] It should return a list of message
+[x] It should return a list of message
 
 ## :computer: Techs
 
