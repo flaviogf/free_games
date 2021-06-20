@@ -1,3 +1,4 @@
+require "faraday"
 require "json"
 require "securerandom"
 require "time"
