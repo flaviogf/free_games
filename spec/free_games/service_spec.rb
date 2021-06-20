@@ -1,4 +1,6 @@
-describe FreeGames::HttpService do
+require "spec_helper"
+
+RSpec.describe FreeGames::HttpService do
   subject(:service) do
     FreeGames::HttpService.new
   end
@@ -8,12 +10,14 @@ describe FreeGames::HttpService do
   end
 
   it "should return a list of games" do
-    games = service.fetch
+    VCR.use_cassette("games") do
+      games = service.fetch
 
-    expect(games.count).to be 1
+      expect(games.count).to be 2
 
-    game = games.first
+      game = games.first
 
-    expect(game).to be_a FreeGames::Game
+      expect(game).to be_a FreeGames::Game
+    end
   end
 end
