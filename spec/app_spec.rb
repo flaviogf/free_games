@@ -22,9 +22,9 @@ describe "Functions" do
 
         messages = JSON.parse(response.body.join)
 
-        expect(messages.size).to be 1
+        expect(messages.count).to be 2
 
-        message = messages[0]
+        message = messages.first
 
         expect(message.has_key?("uid")).to be true
         expect(message.has_key?("updateDate")).to be true
