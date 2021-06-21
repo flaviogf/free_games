@@ -32,6 +32,20 @@ bundle exec functions-framework-ruby --target search
 # It's running at http://localhost:8080
 ```
 
+### Running functions in Docker
+
+```sh
+git clone git@github.com:flaviogf/free_games.git
+
+cd free_games
+
+docker build -t flaviogf/free-games .
+
+docker run --rm -p 8080:8080 flaviogf/free-games --source=app.rb --target=search
+
+# It's running at http://localhost:8080
+```
+
 ### Deploying to Cloud Functions
 
 ```sh
