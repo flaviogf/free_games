@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe FreeGames::Search do
+RSpec.describe FreeGames::Search do
   subject(:game) do
     FreeGames::Game.new id: SecureRandom.uuid,
                         title: "Genshin Impact",

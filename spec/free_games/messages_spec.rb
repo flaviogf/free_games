@@ -1,4 +1,6 @@
-describe FreeGames::Messages do
+require "spec_helper"
+
+RSpec.describe FreeGames::Messages do
   subject(:message) do
     FreeGames::Message.new uid: SecureRandom.uuid,
                            updateDate: Time.parse("2020-06-12"),

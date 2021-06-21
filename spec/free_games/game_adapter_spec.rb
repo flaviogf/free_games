@@ -1,4 +1,6 @@
-describe FreeGames::GameAdapter do
+require "spec_helper"
+
+RSpec.describe FreeGames::GameAdapter do
   subject(:game) do
     FreeGames::Game.new id: SecureRandom.uuid,
                         title: "Genshin Impact",
